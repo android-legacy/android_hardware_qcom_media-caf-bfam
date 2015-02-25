@@ -463,7 +463,8 @@ class omx_vdec: public qc_omx_component
             OMX_COMPONENT_PAUSE_PENDING          =0xB,
             OMX_COMPONENT_EXECUTE_PENDING        =0xC,
             OMX_COMPONENT_OUTPUT_FLUSH_IN_DISABLE_PENDING =0xD,
-            OMX_COMPONENT_DISABLE_OUTPUT_DEFERRED=0xE
+            OMX_COMPONENT_DISABLE_OUTPUT_DEFERRED=0xE,
+            OMX_COMPONENT_FLUSH_DEFERRED = 0xF
         };
 
         // Deferred callback identifiers
@@ -959,7 +960,6 @@ class omx_vdec: public qc_omx_component
 
         unsigned int m_fill_output_msg;
         bool client_set_fps;
-        bool ignore_not_coded_vops;
         class allocate_color_convert_buf
         {
             public:
